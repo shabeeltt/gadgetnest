@@ -1,0 +1,40 @@
+.hero {
+  background: linear-gradient(
+      to bottom,
+      rgba(86, 86, 86, 0.1),
+      rgba(64, 64, 64, 0.1) 80%,
+      rgb(242, 243, 245) 95%,
+      rgb(242, 243, 245) 100%
+    ),
+    url(https://img.freepik.com/free-photo/top-view-virtual-reality-headset-white-headphones_23-2148912739.jpg?t=st=1735295264~exp=1735298864~hmac=195fe8edc561156ce8526a0e9119d479729510b6fd1e1f4b4f5dc914a9b0ef37&w=1060);
+  background-position: left;
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+
+  .slogan {
+    min-height: 150px;
+    padding: 10px;
+    width: 39%;
+    margin-right: 5%;
+    background: linear-gradient(rgba(0, 0, 0, 0.368), rgba(0, 0, 0, 0.352));
+    border-radius: 5px;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 710px) {
+  .hero {
+    justify-content: center;
+    .slogan {
+      margin-right: 0;
+      width: 80%;
+    }
+  }
+}
