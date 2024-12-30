@@ -4,15 +4,19 @@ import MenuItem from "./MenuItem";
 import { catagoryData } from "../Constants";
 
 const DirectoryMenu = () => {
-  console.log("this is data", catagoryData);
   return (
     <>
-      <h1 style={{ color: "#333", margin: "30px 0" }}>
+      <h1 style={{ color: "#333", marginBottom: "40px" }}>
         The Best Deals, Just for You
       </h1>
       <div className="directory-menu">
         {catagoryData.map((item, index) => (
-          <MenuItem key={index} title={item.title} imageUrl={item.img} />
+          <MenuItem
+            key={index}
+            title={item.title}
+            imageUrl={item.img}
+            url={item.url}
+          />
         ))}
       </div>
     </>

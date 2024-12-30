@@ -1,14 +1,16 @@
 import React from "react";
 import "../Styles/MenuItem.scss";
+import { Link } from "react-router-dom";
 
-const MenuItem = ({ title, imageUrl }) => {
-  console.log(title);
+const MenuItem = ({ title, imageUrl, url }) => {
   return (
     <div className="menu-item" style={{ backgroundImage: `url(${imageUrl})` }}>
-      <div className="content">
-        <div className="title">{title}</div>
-        <p className="subtitle">BUY NOW</p>
-      </div>
+      <Link to="/shop" style={{ textDecoration: "none" }}>
+        <div className="content">
+          <div className="title">{title}</div>
+          <p className="subtitle">BUY NOW</p>
+        </div>
+      </Link>
     </div>
   );
 };

@@ -13,15 +13,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: white;
+  color: #333;
 
   .slogan {
     min-height: 150px;
     padding: 10px;
     width: 39%;
     margin-right: 5%;
-    background: linear-gradient(rgba(0, 0, 0, 0.368), rgba(0, 0, 0, 0.352));
     border-radius: 5px;
+    animation: toUpAnimation 0.5s ease;
 
     h1 {
       margin-bottom: 20px;
@@ -29,11 +29,34 @@
   }
 }
 
+//animatoin effects
+@keyframes toUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//responsive designs
+@media (max-width: 1030px) {
+  .hero {
+    height: 70vh;
+  }
+}
 @media (max-width: 710px) {
   .hero {
+    color: white;
     justify-content: center;
     .slogan {
       margin-right: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.368), rgba(0, 0, 0, 0.352));
       width: 80%;
     }
   }

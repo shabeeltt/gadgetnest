@@ -1,0 +1,62 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #646464ce;
+  color: white;
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+
+  &_img {
+    width: 100px;
+  }
+}
+
+.options {
+  display: flex;
+  gap: 20px;
+}
+
+.option {
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.active {
+    font-weight: bold;
+    &::after {
+      width: 100%;
+    }
+  }
+}
