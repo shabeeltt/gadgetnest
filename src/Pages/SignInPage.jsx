@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "../Styles/SignInPage.scss";
+import "../Styles/SignInAndSignUpPage.scss";
+import { Link } from "react-router-dom";
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
@@ -21,30 +22,47 @@ const SignInPage = () => {
     setFormData({ [name]: value });
   };
   return (
-    <div className="sign-in">
+    <div className="auth">
       <div className="content">
-        <h2>Sign in with your E-mail and Password</h2>
+        <h2 className="title">Welcome back</h2>
+        <h4 className="sub-title">Please enter your details to sign in </h4>
 
         <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleFormChange}
-            required
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleFormChange}
-            required
-          />
-          <label htmlFor="password">Password</label>
-          <input type="submit" value="SIGN IN" />
+          <div className="form-inputs">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleFormChange}
+              required
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleFormChange}
+              required
+            />
+            <div className="link">
+              <p>Don't have an account yet?</p>
+              <Link
+                to="/signup"
+                style={{
+                  color: "#222",
+                  cursor: "pointer",
+                  fontWeight: "600",
+                  textDecoration: "none",
+                }}
+              >
+                Sign Up
+              </Link>
+            </div>
+          </div>
+          <input type="submit" value="SIGN IN" className="submit-btn" />
         </form>
       </div>
     </div>
