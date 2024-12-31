@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../Styles/SignInAndSignUpPage.scss";
 import { Link } from "react-router-dom";
+import CustomButton from "../Components/CustomButton";
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
@@ -62,7 +63,7 @@ const SignInPage = () => {
               </Link>
             </div>
           </div>
-          <input type="submit" value="SIGN IN" className="submit-btn" />
+          <CustomButton type="submit">SIGN IN</CustomButton>
         </form>
       </div>
     </div>

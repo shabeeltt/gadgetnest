@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/ProductItem.scss";
+import CustomButton from "./CustomButton";
 
 const ProductItem = ({ name, price, imageUrl }) => {
   return (
@@ -10,7 +11,13 @@ const ProductItem = ({ name, price, imageUrl }) => {
       <div className="product-details">
         <p>&#8377; {price}</p>
         <h5>{name}</h5>
-        {/* <button></button> */}
+        <CustomButton
+          style={{
+            marginTop: "10px",
+          }}
+        >
+          Add To Cart
+        </CustomButton>
       </div>
     </div>
   );

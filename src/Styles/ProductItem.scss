@@ -1,7 +1,6 @@
 .product-item {
   display: flex;
   flex-direction: column;
-  height: 350px;
   align-items: center;
   padding: 10px;
   margin: 10px 0;
@@ -9,8 +8,8 @@
   border-radius: 5px;
 
   .image {
-    width: 240px;
     height: 250px;
+    width: 230px;
     margin-bottom: 10px;
     border-radius: 5px;
   }
@@ -21,6 +20,6 @@
     flex-direction: column;
     gap: 5px;
     font-size: 18px;
-    margin-bottom: 30px;
+    padding: 10px 0;
   }
 }

@@ -32,10 +32,6 @@
   position: relative;
   transition: all 0.3s ease-out;
 
-  &:hover {
-    font-weight: bold;
-  }
-
   &::after {
     content: "";
     position: absolute;
