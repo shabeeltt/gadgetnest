@@ -1,26 +1,47 @@
 import React from "react";
 import { useState } from "react";
 import "../Styles/SignInAndSignUpPage.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CustomButton from "../Components/CustomButton";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase/FirebaseConfig";
 
 const SignInPage = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [error, setError] = useState();
 
-  const handleSubmit = (e) => {
+  //handle the sign in form submit with firebase
+  //@params e - The event object from the form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     setFormData({
       email: "",
       password: "",
     });
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      navigate("/");
+    } catch (err) {
+      setError(err.code);
+    }
   };
 
   const handleFormChange = (e) => {
     const { value, name } = e.target;
-    setFormData({ [name]: value });
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
   return (
     <div className="auth">
@@ -30,6 +51,7 @@ const SignInPage = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="form-inputs">
+            {error && <p style={{ color: "red" }}>{error.split("/")[1]}</p>}
             <label htmlFor="email">Email</label>
             <input
               type="email"
